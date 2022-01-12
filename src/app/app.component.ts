@@ -18,9 +18,13 @@ import { ObjectUnsubscribedErrorCtor } from 'rxjs/internal/util/ObjectUnsubscrib
 export class AppComponent {
   query: string;
   artists: any[];
+
+  showArtist(artist: any) {
+    this.query = artist.name;
+  }
   
   constructor() {
-    this.query = 'Lejing Huang';
+    this.query = '';
     this.artists = [
       {
         "name":"Barot Bellingham",
