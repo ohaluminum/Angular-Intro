@@ -1,18 +1,10 @@
+import { isNgTemplate } from '@angular/compiler';
 import { Component } from '@angular/core';
 import { ObjectUnsubscribedErrorCtor } from 'rxjs/internal/util/ObjectUnsubscribedError';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styles: [
-    `
-      .list-group-item:first-child {
-        border-top-left-raius: 0;
-        border-top-right-raius: 0;
-        border-top: 0;
-      }
-    `
-  ]
 })
 
 export class AppComponent {
@@ -21,6 +13,7 @@ export class AppComponent {
 
   showArtist(artist: any) {
     this.query = artist.name;
+    artist.highlight = !artist.highlight;
   }
   
   constructor() {
