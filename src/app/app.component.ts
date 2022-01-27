@@ -12,7 +12,6 @@ export class AppComponent implements OnInit {
 
   showArtist(artist: any) {
     this.query = artist.name;
-    //artist.highlight = !artist.highlight;
     this.currentArtist = artist;
   }
   
